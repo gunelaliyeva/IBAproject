@@ -1,0 +1,44 @@
+<div *ngIf="sec===2">
+  <div class="container-fluid mx-auto d-flex flex-row justify-content-between p-0" style="height: 88vh" *ngIf="length>=0">
+    <nav class="w-25 overflow-auto" style="overflow-y: scroll; max-height: 88vh">
+      <a routerLink="/details/{{index}}/{{i}}" routerLinkActive="active-link" class="d-block p-2 bg-light text-center text-reset text-decoration-none font-weight-bold" style="font-size: 20px" *ngFor="let item of getProjects; let i =index" (click)="num=i">{{item.title}}</a>
+    </nav>
+    <div class="w-50 mx-auto">
+      <div class="d-flex justify-content-end mt-2">
+        <a routerLink="/add-project/{{index}}/true" class="btn btn-outline-dark mr-3">Add new project</a>
+      </div>
+      <div *ngFor="let item of getProjects; let i = index" class="mt-5">
+        <h1 *ngIf="i===num" class="text-center mb-3 text-uppercase text-primary">{{item.title}}</h1>
+        <article class="text-justify" *ngIf="i===num">{{item.text}}</article>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="length<0">
+    <h1 class="text-center text-danger mt-5">Projects assigned to this user number not found</h1>
+    <div class="d-flex w-75 justify-content-center mt-5 mx-auto align-items-center">
+      <a routerLink="/add-project/{{index}}/false" class="btn btn-outline-dark mr-3">Add new project</a>
+      <p>to this user number or</p>
+    </div>
+    <div class="d-flex w-75 justify-content-center mt-5 mx-auto align-items-center">
+      <a routerLink="/search/{{userName}}" (click)="goBack()" class="btn btn-outline-dark mr-3">Go Back</a>
+      <p>and search another user number</p>
+    </div>
+  </div>
+</div>
+<div class="sk-fading-circle" *ngIf="sec!==2">
+  <div class="sk-circle1 sk-circle"></div>
+  <div class="sk-circle2 sk-circle"></div>
+  <div class="sk-circle3 sk-circle"></div>
+  <div class="sk-circle4 sk-circle"></div>
+  <div class="sk-circle5 sk-circle"></div>
+  <div class="sk-circle6 sk-circle"></div>
+  <div class="sk-circle7 sk-circle"></div>
+  <div class="sk-circle8 sk-circle"></div>
+  <div class="sk-circle9 sk-circle"></div>
+  <div class="sk-circle10 sk-circle"></div>
+  <div class="sk-circle11 sk-circle"></div>
+  <div class="sk-circle12 sk-circle"></div>
+</div>
+<router-outlet></router-outlet>
+
+

@@ -1,0 +1,14 @@
+<div class="bg-light">
+  <nav class="nav justify-content-around col-4 mx-auto align-items-center">
+    <div *ngIf="!isAuthApp" class="w-100 d-flex justify-content-between">
+      <a routerLink="" class="active text-dark text-decoration-none p-3 rounded font-weight-bold">Log in</a>
+      <a routerLink="signUp" class="active text-dark text-decoration-none p-3 rounded font-weight-bold">Sign up</a>
+    </div>
+    <div *ngIf="isAuthApp" class="w-100 d-flex justify-content-between">
+      <a routerLink="/search/{{userName}}" class="active text-dark text-decoration-none p-3 rounded font-weight-bold">Search page</a>
+      <a routerLink="" class="active text-dark text-decoration-none p-3 rounded font-weight-bold" (click)="onClick()">Log out</a>
+    </div>
+  </nav>
+</div>
+<router-outlet></router-outlet>
+<h1></h1>

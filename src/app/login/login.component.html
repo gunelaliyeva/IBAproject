@@ -1,0 +1,12 @@
+<div class="container p-5 d-flex justify-content-center flex-column align-items-center mt-5">
+  <h1 class="mb-4">Log in</h1>
+  <p class="text-danger">{{failText}}</p>
+  <form class="form-group d-flex flex-column justify-content-center align-items-center w-50">
+    <input type="text" class="form-control mb-3 " name="name" placeholder="username" required autofocus autocomplete="off" [(ngModel)]="name">
+    <input type="password" class="form-control mb-3" name="password" placeholder="password" required [(ngModel)]="password"/>
+    <a routerLink="{{url}}" class="btn btn-outline-dark btn-block" (click)="onSubmit()" >Submit</a>
+    <p class="mb-2 mt-2">Do you have account?</p>
+    <a routerLink="signUp" class="active text-reset text-decoration-none" >Sign Up</a>
+  </form>
+  </div>
+<router-outlet></router-outlet>

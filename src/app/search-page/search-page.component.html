@@ -1,0 +1,28 @@
+<div *ngIf="sec===2">
+  <h1 class="text-center mt-5 mb-3">For getting projects enter user number</h1>
+  <form class="d-flex align-items-center justify-content-center mt-5">
+    <input type="search" placeholder="user number" class="btn-outline-light text-dark w-50 mr-4 p-1" name="userNumber" [(ngModel)]="userNumber">
+    <a routerLink="/details/{{userNumber}}/0" class="btn btn-outline-dark text-decoration-none">Search</a>
+    <a routerLink="/details/{{userNumber}}/0" class="btn btn-outline-dark text-decoration-none ml-2" (click)="onClick()">Add</a>
+  </form>
+  <p class="text-center mt-2 mb-2">or select one below</p>
+  <div *ngFor="let item of numbers" class="overflow-auto mx-auto" style="width: 60%">
+    <p *ngIf="item.userName===userName" (click)="userNumber=item.id" class="d-block p-2 text-center text-reset text-decoration-none font-weight-bold select">{{item.id}}</p>
+  </div>
+</div>
+
+
+<div class="sk-fading-circle" *ngIf="sec!==2">
+  <div class="sk-circle1 sk-circle"></div>
+  <div class="sk-circle2 sk-circle"></div>
+  <div class="sk-circle3 sk-circle"></div>
+  <div class="sk-circle4 sk-circle"></div>
+  <div class="sk-circle5 sk-circle"></div>
+  <div class="sk-circle6 sk-circle"></div>
+  <div class="sk-circle7 sk-circle"></div>
+  <div class="sk-circle8 sk-circle"></div>
+  <div class="sk-circle9 sk-circle"></div>
+  <div class="sk-circle10 sk-circle"></div>
+  <div class="sk-circle11 sk-circle"></div>
+  <div class="sk-circle12 sk-circle"></div>
+</div>

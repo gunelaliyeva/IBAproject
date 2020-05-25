@@ -1,0 +1,7 @@
+<div class="container">
+  <form class="d-flex flex-column mx-auto align-items-center" >
+    <input type="text" placeholder="title" class="w-75 border-light p-2 mt-5 font-weight-bold" style="font-size: 18px" name="title" [(ngModel)]="title" autocomplete="off" autofocus>
+    <textarea placeholder="context..." class="w-75 p-2 mt-3 rounded" rows="13" style="font-size: 16px; border: 2px solid rgba(0,0,0,0.3)" name="context" [(ngModel)]="context">{{context}}</textarea>
+    <a routerLink="/search/{{userName}}" class="btn btn-outline-dark btn-block w-75 mt-3" [class.disabled]="!isComplete" (click)="onsubmit()">Save project</a>
+  </form>
+</div>
