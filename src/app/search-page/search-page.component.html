@@ -7,7 +7,7 @@
   </form>
   <p class="text-center mt-2 mb-2">or select one below</p>
   <div *ngFor="let item of numbers" class="overflow-auto mx-auto" style="width: 60%">
-    <p *ngIf="item.userName===userName" (click)="userNumber=item.id" class="d-block p-2 text-center text-reset text-decoration-none font-weight-bold select">{{item.id}}</p>
+    <p *ngIf="item.userName===userName" (click)="userNumber=item.id" class="d-block p-2 text-center text-reset text-decoration-none font-weight-bold select bg-light">{{item.id}}</p>
   </div>
 </div>
 

@@ -1,0 +1,15 @@
+<ActionBar title="search">
+  <FlexboxLayout flexDirection="row">
+    <Label text="Search" [nsRouterlink]="['/search/'+userName]"></Label>
+    <Label text="Log out" [nsRouterLink]="['']"></Label>
+  </FlexboxLayout>
+</ActionBar>
+<StackLayout>
+  <Label text="{{number}}" class="title"></Label>
+  <Button text="Add new project" [nsRouterLink]="['/add-project/'+number]"></Button>
+<ScrollView *ngFor="let item of projects">
+  <StackLayout class="list" *ngIf="item.projectName===number && item.userName===userName" [nsRouterLink]="['/details/'+item.id]">
+    <Label text="{{item.title}}"></Label>
+  </StackLayout>
+</ScrollView>
+</StackLayout>

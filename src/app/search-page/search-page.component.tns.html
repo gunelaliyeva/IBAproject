@@ -1,0 +1,18 @@
+<ActionBar title="search">
+  <FlexboxLayout flexDirection="row">
+  <Label text="Search" [nsRouterlink]="['/search/'+text]"></Label>
+  <Label text="Log out" [nsRouterLink]="['']"></Label>
+  </FlexboxLayout>
+</ActionBar>
+<StackLayout class="container">
+  <Label text="For adding projects enter user number"></Label>
+<TextField hint="search or add" [(ngModel)]="userNumber"></TextField>
+  <Button text="search" class="submit" [nsRouterLink]="['/list/'+userNumber]"></Button>
+  <Button text="add" class="submit" (tap)="onTap()"></Button>
+  <Label text="or select one below"></Label>
+  <ScrollView *ngFor="let item of initialProjects">
+    <StackLayout class="listView" *ngIf="item.userName===userName" (tap)="userNumber=item.id" [nsRouterLink]="['/list/' + item.id]">
+      <Label text="{{item.id}}" class="listLabel"></Label>
+    </StackLayout>
+  </ScrollView>
+</StackLayout>

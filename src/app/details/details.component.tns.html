@@ -1,0 +1,12 @@
+<ActionBar title="search">
+  <FlexboxLayout flexDirection="row">
+    <Label text="Search" [nsRouterlink]="['/search/'+userName]"></Label>
+    <Label text="Log out" [nsRouterLink]="['']"></Label>
+  </FlexboxLayout>
+</ActionBar>
+<StackLayout>
+  <Label text="{{serviceProjects[findIndex].title}}" class="title"></Label>
+<ScrollView>
+  <Label text="{{serviceProjects[findIndex].text}}" textWrap="true"></Label>
+</ScrollView>
+</StackLayout>

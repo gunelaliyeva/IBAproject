@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "IBA-project"
+    }
+  },
+  "defaultProject": "IBA-project",
+  "cli": {
+    "defaultCollection": "@nativescript/schematics"
+  }
 }

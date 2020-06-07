@@ -1,7 +1,8 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {AppComponent} from '../app.component';
-import {v4 as uuid} from 'uuid';
+import {AppComponent} from '@src/app/app.component';
+import {ProjectsService} from '@src/Datas/projects.service';
+
 @Component({
   selector: 'app-add-projects',
   templateUrl: './add-projects.component.html',
@@ -13,6 +14,13 @@ export class AddProjectsComponent implements OnInit, DoCheck {
   userName = this.datas.userName;
   projectObject;
   isComplete = false;
+  generateID(){
+    return `${Math.random()}${Date.now()}`;
+  }
+  onTap(){
+    this.projectsService.setProjects(this.generateID(), this.userNumber, this.userName, this.title, this.context);
+    console.log(this.userNumber, this.userName, this.title);
+  }
   onsubmit(){
     try {
       fetch(`http://localhost:3001/projects`, {
@@ -25,7 +33,7 @@ export class AddProjectsComponent implements OnInit, DoCheck {
       console.log(e);
     }
   }
-  constructor(private route: ActivatedRoute, private datas: AppComponent) { }
+  constructor(private route: ActivatedRoute, private datas: AppComponent, private projectsService: ProjectsService) { }
 
   ngOnInit(): void {
     this.userNumber = this.route.snapshot.params.number;
@@ -33,7 +41,7 @@ export class AddProjectsComponent implements OnInit, DoCheck {
   ngDoCheck(): void {
     if (this.title !== undefined && this.context !== undefined && this.title !== '' && this.context !== ''){
       this.projectObject = {
-        id: uuid(),
+        id: this.generateID(),
         projectName: this.userNumber,
         userName: this.datas.userName,
         title: this.title,

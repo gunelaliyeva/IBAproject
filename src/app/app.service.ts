@@ -1,10 +1,5 @@
 import { Injectable } from '@angular/core';
-
-export interface Userinfo {
-  userName: string;
-  password: string;
-  fullName: string;
-}
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -12,5 +7,8 @@ export interface Userinfo {
 
 export class AppService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+  getUsers(){
+    return this.http.get('http://localhost:3001/users').subscribe(data => data);
+  }
 }

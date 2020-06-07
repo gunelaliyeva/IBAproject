@@ -133,12 +133,3 @@
   0%, 39%, 100% { opacity: 0; }
   40% { opacity: 1; }
 }
-
-
-.select{
-  cursor: pointer;
-  background-color: #f8f9fa;
-}
-.select:hover{
-  background-color: lightgray;
-}

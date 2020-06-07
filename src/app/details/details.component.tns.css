@@ -1,0 +1,22 @@
+/* Add mobile styles for the component here.  */
+ActionBar{
+  background-color: white;
+}
+ActionBar>FlexboxLayout>Label{
+  color: black;
+  font-size: 22;
+  margin-right: 20;
+  margin-left: 20;
+}
+.text{
+  margin: 10;
+}
+Label{
+  font-size: 18;
+}
+.title{
+  font-size: 30;
+  color: darkblue;
+  text-transform: uppercase;
+  text-align: center;
+}

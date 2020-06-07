@@ -2,13 +2,13 @@
   <h1 class="mb-4">Sign Up</h1>
   <p class="text-danger">{{failText}}</p>
   <form class="form-group d-flex flex-column justify-content-center align-items-center w-50">
-  <input type="text" [(ngModel)]="name" name="name" autocomplete="off" class="form-control mb-3" placeholder="name" autofocus>
-  <input type="text" [(ngModel)]="fullname" name="fullname" autocomplete="off" class="form-control mb-3" placeholder="fullname">
-  <input type="password" [(ngModel)]="password" name="password" class="form-control mb-3" placeholder="password" autofocus>
-  <a routerLink="{{url}}" class="btn btn-outline-dark btn-block" (click)="onSubmit()">Submit</a>
-  <p class="mb-2 mt-2">Do you have account?</p>
-  <a routerLink="" class="active text-reset text-decoration-none">Log in</a>
-</form>
+    <input type="text" [(ngModel)]="name" name="name" autocomplete="off" class="form-control mb-3" placeholder="name" autofocus>
+    <input type="text" [(ngModel)]="fullname" name="fullname" autocomplete="off" class="form-control mb-3" placeholder="fullname">
+    <input type="password" [(ngModel)]="password" name="password" class="form-control mb-3" placeholder="password" autofocus>
+    <a routerLink="{{url}}" class="btn btn-outline-dark btn-block" (click)="onSubmit()">Submit</a>
+    <p class="mb-2 mt-2">Do you have account?</p>
+    <a routerLink="" class="active text-reset text-decoration-none">Log in</a>
+  </form>
 </div>
 
 <router-outlet></router-outlet>

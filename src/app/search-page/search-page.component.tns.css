@@ -1,0 +1,38 @@
+/* Add mobile styles for the component here.  */
+ActionBar{
+  background-color: white;
+}
+ActionBar>FlexboxLayout>Label{
+  color: black;
+  font-size: 22;
+  margin-right: 20;
+  margin-left: 20;
+}
+TextField{
+  padding: 10;
+  font-size: 14;
+  border-bottom-color: #333333;
+  margin-top: 15;
+}
+Label{
+  text-align: center;
+  font-size: 14;
+}
+.submit{
+  margin-top: 15;
+  padding: 15;
+  font-size: 16;
+  text-transform: uppercase;
+  color: black;
+}
+.container{
+  margin-top: 100;
+}
+.listLabel{
+  padding: 10;
+}
+.listView{
+  margin: 10;
+  border-bottom-width: 0.5;
+  border-bottom-color: #333333;
+}

@@ -1,0 +1,36 @@
+/* Add mobile styles for the component here.  */
+
+ActionBar{
+  background-color: white;
+}
+ActionBar>Label{
+  color: black;
+  font-size: 26;
+}
+TextField{
+  padding: 10;
+  font-size: 14;
+  border-bottom-color: #333333;
+  margin-top: 15;
+}
+.label{
+  font-size: 16;
+  text-align: center;
+  margin-top: 10;
+}
+.submit{
+  margin-top: 15;
+  padding: 15;
+  font-size: 16;
+  text-transform: uppercase;
+  color: black;
+}
+.container{
+  margin-top: 100;
+}
+.failtext{
+  color: red;
+  text-transform: uppercase;
+  text-align: center;
+}
+

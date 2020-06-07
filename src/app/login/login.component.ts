@@ -1,10 +1,10 @@
-import {
-  Component,
-  OnInit,
-  DoCheck
-} from '@angular/core';
-import {AppComponent} from '../app.component';
+import { Component, OnInit, DoCheck } from '@angular/core';
+// @ts-ignore
+import {AppComponent} from '@src/app/app.component';
 import {HttpClient} from '@angular/common/http';
+import {UsersService} from '@src/Datas/users.service';
+import {Users} from '@src/Datas/users';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,6 +17,8 @@ export class LoginComponent implements OnInit, DoCheck {
   checked = false;
   url = '';
   usernumber;
+  usersInfo: Array<Users>;
+  deneme;
   onSubmit(){
     this.password = '';
     if (!this.checked)
@@ -27,11 +29,13 @@ export class LoginComponent implements OnInit, DoCheck {
       this.datas.isAuthApp = true;
       this.datas.userName = this.name;
       this.datas.userNumber = this.usernumber;
+      console.log(this.datas.isAuthApp);
     }
   }
-  constructor(private http: HttpClient, private datas: AppComponent) { }
+  constructor(private http: HttpClient, private datas: AppComponent, private usersService: UsersService) { }
   ngOnInit(): void {
     this.getDatas();
+    this.usersInfo = this.usersService.getUsers();
   }
   ngDoCheck(): void {
     if (this.users !== undefined) {
@@ -47,6 +51,19 @@ export class LoginComponent implements OnInit, DoCheck {
           this.url = '';
         }
       }
+    }
+    if (this.usersInfo !== undefined){
+     for (const iterator of this.usersInfo){
+       if (iterator.userName === this.name && iterator.password === this.password) {
+         this.checked = true;
+         this.url = '/search/' + this.name;
+         this.usernumber = iterator.id;
+         break;
+       } else {
+         this.checked = false;
+         this.url = '';
+       }
+     }
     }
   }
   private async getDatas(){

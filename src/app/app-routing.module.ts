@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, NoPreloading } from '@angular/router';
-import {LoginComponent} from './login/login.component';
-import {SignupComponent} from './signup/signup.component';
-import {SearchPageComponent} from './search-page/search-page.component';
-import {NotFoundComponent} from './not-found/not-found.component';
-import {DetailsComponent} from './details/details.component';
-import {AddProjectsComponent} from './add-projects/add-projects.component';
+import {LoginComponent} from '@src/app/login/login.component';
+import {SignupComponent} from '@src/app/signup/signup.component';
+import {SearchPageComponent} from '@src/app/search-page/search-page.component';
+import {NotFoundComponent} from '@src/app/not-found/not-found.component';
+import {DetailsComponent} from '@src/app/details/details.component';
+import {AddProjectsComponent} from '@src/app/add-projects/add-projects.component';
 const routes: Routes = [
   {
     path: '',

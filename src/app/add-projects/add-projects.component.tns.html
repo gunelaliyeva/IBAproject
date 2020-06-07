@@ -1,0 +1,11 @@
+<ActionBar title="search">
+  <FlexboxLayout flexDirection="row">
+    <Label text="Search" [nsRouterlink]="['/search/'+userName]"></Label>
+    <Label text="Log out" [nsRouterLink]="['']"></Label>
+  </FlexboxLayout>
+</ActionBar>
+<StackLayout>
+  <TextField hint="title" [(ngModel)]="title"></TextField>
+  <TextView class="context" hint="context..." [(ngModel)]="context"></TextView>
+  <Button text="Save project" class="submit" isEnabled="{{isComplete}}" (tap)="onTap()" [nsRouterLink]="['/search/'+userName]"></Button>
+</StackLayout>

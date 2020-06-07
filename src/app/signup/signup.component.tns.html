@@ -1,0 +1,15 @@
+<ActionBar title="Sign up" class="">
+  <Label text="Sign up"></Label>
+</ActionBar>
+<StackLayout>
+  <StackLayout class="container">
+    <Label text="{{failText}}" class="failtext"></Label>
+    <TextField hint="username" autocorrect="false" [(ngModel)]="name"></TextField>
+    <TextField hint="fullname" autocorrect="false" [(ngModel)]="fullname"></TextField>
+    <TextField hint="password" secure="true" autocorrect="false" [(ngModel)]="password"></TextField>
+    <Button text="submit" class="submit" (tap)="onTap()" [nsRouterLink]="[url]"></Button>
+    <Label text="Do you have account?" class="label"></Label>
+    <Label text="log in" class="label" [nsRouterLink]="['/login']"></Label>
+  </StackLayout>
+  <router-outlet></router-outlet>
+</StackLayout>
